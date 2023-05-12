@@ -1,11 +1,11 @@
 # Boas-vindas ao repositório do projeto Shopping Cart!
 
 <details>
-  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
+  <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
 Esse é um projeto desenvolvido para simular um **carrinho de compras** totalmente dinâmico! 🛒
 
-Para isso, vai consumir dados diretamente de uma **API!** 🤩
+Para isso, vai consumir dados diretamente de uma **API!**
 
 O que é API? Da sigla em inglês _Application Programming Interface_, uma API é um ponto de contato na internet com determinado serviço e nesse projeto foi utilizada a API do Mercado Livre para buscar produtos à venda. 🏷
 
