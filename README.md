@@ -76,8 +76,6 @@ Se a análise do `ESLint` e do `Stylelint` encontrarem problemas no código, tai
 
 É possível também instalar o plugin do `ESLint` no Visual Studio Code. Para isso, basta fazer o download do plugin `ESLint` e instalá-lo.
 
-⚠️ **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
-
 </details>
 
 <details>

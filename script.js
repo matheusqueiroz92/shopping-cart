@@ -35,9 +35,8 @@ const createProductItemElement = ({ sku, name, image }) => {
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
 const cartItemClickListener = (event) => {
-  const removeItemClick = event.path[0];
+  const removeItemClick = event.target;
   // const itemRemoved = document.getElementById(removeItemClick);
-  // console.log(event);
   removeItemClick.remove();
   // saveCartItems('cartItems', ); // remover o item clicado do localStorage
 };
