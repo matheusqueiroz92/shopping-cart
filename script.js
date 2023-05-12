@@ -35,19 +35,27 @@ const createProductItemElement = ({ sku, name, image }) => {
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
 const cartItemClickListener = (event) => {
-  const removeItemClick = event.target;
-  // const itemRemoved = document.getElementById(removeItemClick);
-  removeItemClick.remove();
+  const removedItem = event.target;
+  removedItem.remove();
+  // const removeItemClick = event.target;
+  // // const itemRemoved = document.getElementById(removeItemClick);
+  // removeItemClick.remove();
   // saveCartItems('cartItems', ); // remover o item clicado do localStorage
 };
 
-const createCartItemElement = ({ sku, name, salePrice }) => {
+const createCartItemElement = ({ img, sku, name, salePrice }) => {
+  const div = document.createElement('div');
+  div.className = 'cart__item';
+  div.id = `${sku}-cart`;
+  const image = document.createElement("img");
+  image.src = img;
   const li = document.createElement('li');
-  li.id = `${sku}-cart`;
-  li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
-  li.addEventListener('click', cartItemClickListener);
-  return li;
+  div.addEventListener('click', cartItemClickListener);
+  div.appendChild(image);
+  div.appendChild(li);
+  console.log(div);
+  return div;
 };
 
 const loadCart = () => {
@@ -65,7 +73,7 @@ listProduct = async () => {
   const products = await fetchProducts('computador');
   const sectionItems = document.querySelector('.items');
   products.forEach((element) => {
-    const objProduct = { sku: element.id, name: element.title, image: element.thumbnail };
+    const objProduct = { img: element.thumbnail, sku: element.id, name: element.title, image: element.thumbnail };
     const resultProduct = createProductItemElement(objProduct);
     sectionItems.appendChild(resultProduct);
   });
@@ -75,7 +83,7 @@ itemAdd = async () => {
   const detailsItem = await fetchItem(addCartItemClick);
   const sectionCart = document.querySelector(classItems);
   detailsItem.forEach((element) => {
-    const objItemAdd = { sku: element.id, name: element.title, salePrice: element.price };
+    const objItemAdd = { img: element.thumbnail, sku: element.id, name: element.title, salePrice: element.price };
     const listItemCart = createCartItemElement(objItemAdd);
     sectionCart.appendChild(listItemCart);
   });
